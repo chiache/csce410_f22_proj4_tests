@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+cd /autograder/submission
+git clone https://github.com/chiache/csce410_f22_proj4_tests -b autograder
+
+cd csce410_f22_proj4_tests
+make
+
+PYTHONPATH=$PWD python /autograder/source/run_tests.py
