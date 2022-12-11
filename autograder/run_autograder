@@ -3,6 +3,7 @@
 cd /autograder/submission
 cp -r /autograder/source/csce410_f22_proj4_tests /autograder/submission
 
-cd csce410_f22_proj4_tests && make
+cd csce410_f22_proj4_tests
+make
 
 python /autograder/source/run_tests.py
