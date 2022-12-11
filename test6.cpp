@@ -11,10 +11,10 @@ void long_thread(void* arg)
 void thread1(void* arg)
 {
     void* stack = NULL;
-    __asm__ __volatile__("mov %%rsp, %0" :: "r"(stack) : "memory");
+    __asm__ __volatile__("mov %%rsp, %0" : "=r"(stack) :: "memory");
     printf("stack for thread 1: %p\n", stack);
     for (int i = 0; i < 10; i++) {
-        __asm__ __volatile__("mov %%rsp, %0" :: "r"(stack) : "memory");
+        __asm__ __volatile__("mov %%rsp, %0" : "=r"(stack) :: "memory");
         printf("stack for thread 1: %p\n", stack);
         uthread_yield();
     }
@@ -24,10 +24,10 @@ void thread1(void* arg)
 void thread2(void* arg)
 {
     void* stack = NULL;
-    __asm__ __volatile__("mov %%rsp, %0" :: "r"(stack) : "memory");
+    __asm__ __volatile__("mov %%rsp, %0" : "=r"(stack) :: "memory");
     printf("stack for thread 1: %p\n", stack);
     for (int i = 0; i < 10; i++) {
-        __asm__ __volatile__("mov %%rsp, %0" :: "r"(stack) : "memory");
+        __asm__ __volatile__("mov %%rsp, %0" : "=r"(stack) :: "memory");
         printf("stack for thread 1: %p\n", stack);
         uthread_yield();
     }
