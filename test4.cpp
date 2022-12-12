@@ -11,7 +11,7 @@ void long_thread(void* arg)
 void thread1(void* arg)
 {
     for (int i = 0; i < 10; i++) {
-        printf("This is thread 1\n");
+        fprintf(stderr, "This is thread 1\n");
         uthread_yield();
     }
     uthread_exit();
@@ -20,7 +20,7 @@ void thread1(void* arg)
 void thread2(void* arg)
 {
     for (int i = 0; i < 10; i++) {
-        printf("This is thread 2\n");
+        fprintf(stderr, "This is thread 2\n");
         uthread_yield();
     }
     uthread_exit();

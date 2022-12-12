@@ -13,7 +13,7 @@ void thread1(void* arg)
     register int count = 0;
     for (int i = 0; i < 10; i++) {
         count = i;
-        printf("This is thread 1 (count = %d)\n", count);
+        fprintf(stderr, "This is thread 1 (count = %d)\n", count);
         uthread_yield();
     }
     uthread_exit();
@@ -24,7 +24,7 @@ void thread2(void* arg)
     register int count = 0;
     for (int i = 0; i < 10; i++) {
         count = i;
-        printf("This is thread 2 (count = %d)\n", count);
+        fprintf(stderr, "This is thread 2 (count = %d)\n", count);
         uthread_yield();
     }
     uthread_exit();
