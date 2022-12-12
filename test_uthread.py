@@ -71,12 +71,11 @@ class test_uthread(unittest.TestCase):
                     stack_counts[stack_addr] = 1
         all_stack_addrs = stack_counts.keys()
         self.assertTrue(len(all_stack_addrs) == 2, "Exactly two stacks are used in uthreads")
-        if (len(all_stack_addrs) == 2) {
+        if len(all_stack_addrs) == 2:
             self.assertTrue(stack_count[all_stack_addrs[0]] == 10,
                             "The output does not have 10 outputs from the 1st stack")
             self.assertTrue(stack_count[all_stack_addrs[1]] == 10,
                             "The output does not have 10 outputs from the 2nd stack")
-        }
 
 
     @weight(20)
