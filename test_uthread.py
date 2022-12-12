@@ -78,7 +78,7 @@ class test_uthread(unittest.TestCase):
         stack_counts = dict()
         for l in out.splitlines():
             if "stack" in l:
-                stack_addr = int(l.split[4], base=16) / 4096 * 4096
+                stack_addr = int(l.split()[4], base=16) / 4096 * 4096
                 if stack_addr in stack_counts:
                     stack_counts[stack_addr] += 1
                 else:
@@ -88,10 +88,10 @@ class test_uthread(unittest.TestCase):
             print "stack %08x appears %d times" % (addr, stack_counts[addr])
         self.assertTrue(len(all_stack_addrs) == 2, "Exactly two stacks are used in uthreads")
         if len(all_stack_addrs) == 2:
-            self.assertTrue(stack_count[all_stack_addrs[0]] == 10,
-                            "The output does not have 10 outputs from the 1st stack")
-            self.assertTrue(stack_count[all_stack_addrs[1]] == 10,
-                            "The output does not have 10 outputs from the 2nd stack")
+            self.assertTrue(stack_counts[all_stack_addrs[0]] == 11,
+                            "The output does not have 11 outputs from the 1st stack")
+            self.assertTrue(stack_counts[all_stack_addrs[1]] == 11,
+                            "The output does not have 11 outputs from the 2nd stack")
 
 
     @weight(20)
