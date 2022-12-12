@@ -121,7 +121,7 @@ class test_uthread(unittest.TestCase):
     def test7(self):
         p = subprocess.Popen(['./test7'], stderr=subprocess.PIPE)
         time.sleep(3)
-        os.kill(p.pid, signal.SIGTERM)
+        p.kill()
         _, out = p.communicate()
         print "output:"
         print out
