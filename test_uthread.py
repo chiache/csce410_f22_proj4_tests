@@ -56,7 +56,7 @@ class test_uthread(unittest.TestCase):
 
     @weight(10)
     @number("4.2.3")
-    def test4(self):
+    def test6(self):
         p = subprocess.Popen(['./test6'], stdout=subprocess.PIPE)
         time.sleep(3)
         p.kill()
@@ -81,7 +81,7 @@ class test_uthread(unittest.TestCase):
 
     @weight(20)
     @number("4.2.4")
-    def test6(self):
+    def test5(self):
         p = subprocess.Popen(['./test5'], stdout=subprocess.PIPE)
         time.sleep(3)
         p.kill()
