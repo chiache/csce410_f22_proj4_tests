@@ -12,7 +12,7 @@ void thread1(void* arg)
 {
     uthread_set_param(5);
     for (int i = 0; i < 10; i++) {
-        printf("This is thread 1\n");
+        fprintf(stderr, "This is thread 1\n");
         uthread_yield();
     }
     uthread_exit();
@@ -21,7 +21,7 @@ void thread1(void* arg)
 void thread2(void* arg)
 {
     for (int i = 0; i < 10; i++) {
-        printf("This is thread 2\n");
+        fprintf(stderr, "This is thread 2\n");
 	uthread_set_param(i + 1);
         uthread_yield();
     }
@@ -31,7 +31,7 @@ void thread2(void* arg)
 void thread3(void* arg)
 {
     for (int i = 0; i < 10; i++) {
-        printf("This is thread 3\n");
+        fprintf(stderr, "This is thread 3\n");
 	uthread_set_param(10 - i);
         uthread_yield();
     }

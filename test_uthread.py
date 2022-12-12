@@ -106,12 +106,10 @@ class test_uthread(unittest.TestCase):
         t1_count = 0
         t2_count = 0
         for l in out.splitlines():
-            if "thread 1" in l:
-                if "count = 9" in l:
-                    t1_count += 1
-            if "thread 2" in l:
-                if "count = 9" in l:
-                    t2_count += 2
+            if "thread 1 (count = 9)" in l:
+                t1_count += 1
+            if "thread 2 (count = 9)" in l:
+                t2_count += 1
         self.assertTrue(t1_count == 1, "The output does not have count = 9 from thread 1")
         self.assertTrue(t2_count == 1, "The output does not have count = 9 from thread 2")
 
