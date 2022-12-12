@@ -107,9 +107,9 @@ class test_uthread(unittest.TestCase):
         out, _ = p.communicate()
         thread_order = []
         for l in out.splitlines():
-            if "thread 1" in l: thread_order[] = "1"
-            if "thread 2" in l: thread_order[] = "2"
-            if "thread 3" in l: thread_order[] = "3"
+            if "thread 1" in l: thread_order.append("1")
+            if "thread 2" in l: thread_order.append("2")
+            if "thread 3" in l: thread_order.append("3")
         self.assertListEqual(thread_order[0:3], ["1", "2", "3"], "The first 3 thread orders should be 1, 2, 3")
         self.assertListEqual(thread_order[3:7], ["2", "2", "2", "2"], "The next 4 thread orders should all be thread 2")
         self.assertListEqual(thread_order[-5:], ["3", "3", "3", "3", "3"], "The last 5 thread orders should all be thread 3")
