@@ -9,7 +9,7 @@ class test_uthread(unittest.TestCase):
     @weight(20)
     @number("4.1")
     def test1(self):
-        p = subprocess.Popen(['./test1'], stderr=subprocess.PIPE)
+        p = subprocess.Popen(['./test1-nopic'], stderr=subprocess.PIPE)
         time.sleep(6)
         p.kill()
         _, out = p.communicate()
@@ -29,7 +29,7 @@ class test_uthread(unittest.TestCase):
     @weight(15)
     @number("4.2.1")
     def test2(self):
-        p = subprocess.Popen(['./test2'], stderr=subprocess.PIPE)
+        p = subprocess.Popen(['./test2-nopic'], stderr=subprocess.PIPE)
         time.sleep(6)
         p.kill()
         _, out = p.communicate()
@@ -49,7 +49,7 @@ class test_uthread(unittest.TestCase):
     @weight(20)
     @number("4.2.2")
     def test3(self):
-        p = subprocess.Popen(['./test3'], stderr=subprocess.PIPE)
+        p = subprocess.Popen(['./test3-nopic'], stderr=subprocess.PIPE)
         time.sleep(6)
         p.kill()
         _, out = p.communicate()
@@ -69,7 +69,7 @@ class test_uthread(unittest.TestCase):
     @weight(10)
     @number("4.2.3")
     def test6(self):
-        p = subprocess.Popen(['./test6'], stderr=subprocess.PIPE)
+        p = subprocess.Popen(['./test6-nopic'], stderr=subprocess.PIPE)
         time.sleep(6)
         p.kill()
         _, out = p.communicate()
@@ -97,7 +97,7 @@ class test_uthread(unittest.TestCase):
     @weight(20)
     @number("4.2.4")
     def test5(self):
-        p = subprocess.Popen(['./test5'], stderr=subprocess.PIPE)
+        p = subprocess.Popen(['./test5-nopic'], stderr=subprocess.PIPE)
         time.sleep(6)
         p.kill()
         _, out = p.communicate()
