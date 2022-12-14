@@ -20,6 +20,6 @@ if __name__ == '__main__':
         printf "Score without -fPIC:", runner_nopic.json_data['score']
 
     if runner_nopic.json_data['score'] > runner.json_data['score']:
-        os.replace('/autograder/results/results-nopic.json', '/autograder/results/result.json')
+        os.replace('/autograder/results/results-nopic.json', '/autograder/results/results.json')
 
 
