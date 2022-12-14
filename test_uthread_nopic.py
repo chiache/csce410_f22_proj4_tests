@@ -117,7 +117,7 @@ class test_uthread(unittest.TestCase):
     @weight(15)
     @number("4.2.5")
     def test7(self):
-        p = subprocess.Popen(['./test7'], stderr=subprocess.PIPE)
+        p = subprocess.Popen(['./test7-nopic'], stderr=subprocess.PIPE)
         time.sleep(6)
         p.kill()
         _, out = p.communicate()
